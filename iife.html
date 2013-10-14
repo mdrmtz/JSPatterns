@@ -1,0 +1,63 @@
+<html>
+<head>
+    <script> 
+    
+      
+        // Assignment of a function expression to a variable
+        var myFunction = function () { alert('Assignment of a function expression to a variable'); };
+
+        // Assignment of a function expression to a property
+        var myObj = {
+            myFunction: function () { alert('Assignment of a function expression to a property'); }
+        };
+        
+        
+        (function () {
+            myFunction();
+            myObj.myFunction();
+        })();
+        (function () {
+            var foo = "bar";
+        
+            // Outputs: "bar"
+            console.log(foo);
+        })();
+        
+        
+        var foo = "foo";
+
+        (function (value) {
+            // Outputs: "foo"
+            console.log(value);
+        })(foo);
+
+        
+        18774025225
+        
+        function Book(title, author) {
+            this.title = title;
+            this.author = author;
+        }
+        
+        Book.prototype.getFormatted = function () {
+            return this.title + " - " + this.author;
+        }
+        
+        var hobbit = new Book("The Hobbit", "Tolkien");
+        
+        // Outputs: "The Hobbit - Tolkien"
+        console.log(hobbit.getFormatted());
+        
+        // Oops! We need to use commas, not hyphens
+        Book.prototype.getFormatted = function () {
+            return this.title + ", " + this.author;
+        }
+        
+        // Outputs: "The Hobbit, Tolkien"
+        console.log(hobbit.getFormatted());
+    </script>
+</head>
+
+<body>
+</body>
+</html>
